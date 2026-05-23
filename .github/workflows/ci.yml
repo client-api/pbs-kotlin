@@ -19,6 +19,12 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v3
 
+      # `gradlew` ships in the openapi-generator Kotlin output but its
+      # +x bit doesn't always survive `git clone` (depends on
+      # `core.fileMode` on the runner). chmod is idempotent and cheap.
+      - name: chmod gradlew
+        run: chmod +x ./gradlew
+
       - name: Build
         run: ./gradlew build --no-daemon
         env:
