@@ -428,34 +428,4 @@ open class Client(
         return _version!!
     }
 
-
-    /** Open a terminal session against a node, QEMU VM, or LXC container. */
-    fun connectTerminal(
-        target: TerminalTarget,
-        onMessage: (String) -> Unit = {},
-        onClose: (Int, String) -> Unit = { _, _ -> },
-        onError: (Throwable) -> Unit = {},
-    ): TerminalSession = connectTerminal(
-        baseUrl = basePath,
-        target = target,
-        onMessage = onMessage,
-        onClose = onClose,
-        onError = onError,
-        httpClient = (httpClient as? OkHttpClient) ?: ApiClient.defaultClient,
-    )
-
-    /** Open a VNC session against a node shell, QEMU VM, or LXC container. */
-    fun connectVnc(
-        target: VncTarget,
-        onFrame: (ByteArray) -> Unit = {},
-        onClose: (Int, String) -> Unit = { _, _ -> },
-        onError: (Throwable) -> Unit = {},
-    ): VncSession = connectVnc(
-        baseUrl = basePath,
-        target = target,
-        onFrame = onFrame,
-        onClose = onClose,
-        onError = onError,
-        httpClient = (httpClient as? OkHttpClient) ?: ApiClient.defaultClient,
-    )
 }

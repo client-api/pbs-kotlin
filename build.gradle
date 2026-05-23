@@ -58,9 +58,7 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:1.15.2"
     implementation "com.squareup.moshi:moshi-adapters:1.15.2"
     implementation "com.squareup.okhttp3:okhttp:5.1.0"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit5:$kotlin_version"
-    testImplementation "org.junit.jupiter:junit-jupiter-engine:5.10.0"
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:3.4.2"
 }
 
 java {
@@ -68,17 +66,6 @@ java {
 }
 
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/client-api/pbs-kotlin")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR") ?: ""
-                password = System.getenv("GITHUB_TOKEN") ?: ""
-            }
-        }
-    }
-
     publications {
         maven(MavenPublication) {
             groupId = 'com.clientapi'
@@ -87,18 +74,4 @@ publishing {
             from components.java
         }
     }
-}
-// # WS-PATCH: Kotlin compile daemon needs more heap for the
-//   ~1700 generated classes; default -Xmx512m thrashes for hours.
-kotlin {
-    compilerOptions {
-        // KT-73255: openapi-generator's Kotlin template puts JSON
-        // annotations on data-class constructor params. Kotlin 2.x
-        // deprecates the implicit param-only target and warns on
-        // each annotation site. Opt into the future behaviour.
-        freeCompilerArgs.add("-Xannotation-default-target=param-property")
-    }
-}
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-    kotlinDaemonJvmArguments.set(['-Xmx4g', '-XX:MaxMetaspaceSize=1g'])
 }
