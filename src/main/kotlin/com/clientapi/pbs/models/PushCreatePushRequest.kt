@@ -106,7 +106,7 @@ data class PushCreatePushRequest (
 
     /* Delete vanished backups. This remove the local copy if the remote backup was deleted. */
     @Json(name = "remove-vanished")
-    val removeVanished: kotlin.Boolean? = 0,
+    val removeVanished: kotlin.Boolean? = false,
 
     /* Limit transfer to last N snapshots (per group), skipping others */
     @Json(name = "transfer-last")

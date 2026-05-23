@@ -54,7 +54,7 @@ data class AccessDomainsGetDomainsResponseDataInner (
 
     /* True if it is the default realm */
     @Json(name = "default")
-    val default: kotlin.Boolean? = 0
+    val default: kotlin.Boolean? = false
 
 ) {
 

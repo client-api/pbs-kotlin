@@ -53,7 +53,7 @@ data class AccessOpenidCreateLoginRequest (
 
     /* Whether the HttpOnly authentication flow should be used. */
     @Json(name = "http-only")
-    val httpOnly: kotlin.Boolean? = 0
+    val httpOnly: kotlin.Boolean? = false
 
 ) {
 

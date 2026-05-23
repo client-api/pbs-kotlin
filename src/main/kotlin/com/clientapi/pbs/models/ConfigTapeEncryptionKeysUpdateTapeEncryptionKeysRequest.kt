@@ -56,7 +56,7 @@ data class ConfigTapeEncryptionKeysUpdateTapeEncryptionKeysRequest (
 
     /* Reset the passphrase for a tape key, using the root-only accessible copy. */
     @Json(name = "force")
-    val force: kotlin.Boolean? = 0,
+    val force: kotlin.Boolean? = false,
 
     /* Key derivation function for password protected encryption keys. */
     @Json(name = "kdf")

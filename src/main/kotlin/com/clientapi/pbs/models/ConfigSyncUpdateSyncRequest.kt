@@ -134,7 +134,7 @@ data class ConfigSyncUpdateSyncRequest (
 
     /* Delete vanished backups. This remove the local copy if the remote backup was deleted. */
     @Json(name = "remove-vanished")
-    val removeVanished: kotlin.Boolean? = 0,
+    val removeVanished: kotlin.Boolean? = false,
 
     /* If the verification failed for a local snapshot, try to pull it again. */
     @Json(name = "resync-corrupt")

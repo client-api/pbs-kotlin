@@ -82,7 +82,7 @@ data class ConfigS3UpdateS3Request (
 
     /* Use path style bucket addressing over vhost style. */
     @Json(name = "path-style")
-    val pathStyle: kotlin.Boolean? = 0,
+    val pathStyle: kotlin.Boolean? = false,
 
     /* Port to access S3 object store. */
     @Json(name = "port")

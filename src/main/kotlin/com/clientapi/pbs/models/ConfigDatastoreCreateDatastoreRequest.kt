@@ -142,7 +142,7 @@ data class ConfigDatastoreCreateDatastoreRequest (
 
     /* Overwrite in use marker (S3 backed datastores only). */
     @Json(name = "overwrite-in-use")
-    val overwriteInUse: kotlin.Boolean? = 0,
+    val overwriteInUse: kotlin.Boolean? = false,
 
     /* Run prune job at specified schedule. */
     @Json(name = "prune-schedule")
@@ -150,7 +150,7 @@ data class ConfigDatastoreCreateDatastoreRequest (
 
     /* Re-use existing datastore directory. */
     @Json(name = "reuse-datastore")
-    val reuseDatastore: kotlin.Boolean? = 0,
+    val reuseDatastore: kotlin.Boolean? = false,
 
     /* Datastore tuning options */
     @Json(name = "tuning")

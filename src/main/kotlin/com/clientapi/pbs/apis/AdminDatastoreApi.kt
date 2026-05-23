@@ -944,7 +944,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * @param store Datastore name.
      * @param backupId Backup ID.
      * @param backupType Backup types.
-     * @param errorOnProtected Return error when group cannot be deleted because of protected snapshots (optional, default to 1)
+     * @param errorOnProtected Return error when group cannot be deleted because of protected snapshots (optional, default to true)
      * @param ns Namespace. (optional)
      * @return AdminDatastoreDeleteGroupsResponse
      * @throws IllegalStateException If the request is not correctly configured
@@ -955,7 +955,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun adminDatastoreDeleteGroups(store: kotlin.String, backupId: kotlin.String, backupType: PbsBackupTypeEnum, errorOnProtected: kotlin.Boolean? = 1, ns: kotlin.String? = null) : AdminDatastoreDeleteGroupsResponse {
+    fun adminDatastoreDeleteGroups(store: kotlin.String, backupId: kotlin.String, backupType: PbsBackupTypeEnum, errorOnProtected: kotlin.Boolean? = true, ns: kotlin.String? = null) : AdminDatastoreDeleteGroupsResponse {
         val localVarResponse = adminDatastoreDeleteGroupsWithHttpInfo(store = store, backupId = backupId, backupType = backupType, errorOnProtected = errorOnProtected, ns = ns)
 
         return when (localVarResponse.responseType) {
@@ -980,7 +980,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * @param store Datastore name.
      * @param backupId Backup ID.
      * @param backupType Backup types.
-     * @param errorOnProtected Return error when group cannot be deleted because of protected snapshots (optional, default to 1)
+     * @param errorOnProtected Return error when group cannot be deleted because of protected snapshots (optional, default to true)
      * @param ns Namespace. (optional)
      * @return ApiResponse<AdminDatastoreDeleteGroupsResponse?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1002,7 +1002,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * @param store Datastore name.
      * @param backupId Backup ID.
      * @param backupType Backup types.
-     * @param errorOnProtected Return error when group cannot be deleted because of protected snapshots (optional, default to 1)
+     * @param errorOnProtected Return error when group cannot be deleted because of protected snapshots (optional, default to true)
      * @param ns Namespace. (optional)
      * @return RequestConfig
      */
@@ -1038,8 +1038,8 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * Delete a backup namespace including all snapshots.
      * @param store Datastore name.
      * @param ns Namespace.
-     * @param deleteGroups If set, all groups will be destroyed in the whole hierarchy below andincluding &#x60;ns&#x60;. If not set, only empty namespaces will be pruned. (optional, default to 0)
-     * @param errorOnProtected Return error when namespace cannot be deleted because of protected snapshots (optional, default to 1)
+     * @param deleteGroups If set, all groups will be destroyed in the whole hierarchy below andincluding &#x60;ns&#x60;. If not set, only empty namespaces will be pruned. (optional, default to false)
+     * @param errorOnProtected Return error when namespace cannot be deleted because of protected snapshots (optional, default to true)
      * @return AdminDatastoreDeleteNamespaceResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1049,7 +1049,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun adminDatastoreDeleteNamespace(store: kotlin.String, ns: kotlin.String, deleteGroups: kotlin.Boolean? = 0, errorOnProtected: kotlin.Boolean? = 1) : AdminDatastoreDeleteNamespaceResponse {
+    fun adminDatastoreDeleteNamespace(store: kotlin.String, ns: kotlin.String, deleteGroups: kotlin.Boolean? = false, errorOnProtected: kotlin.Boolean? = true) : AdminDatastoreDeleteNamespaceResponse {
         val localVarResponse = adminDatastoreDeleteNamespaceWithHttpInfo(store = store, ns = ns, deleteGroups = deleteGroups, errorOnProtected = errorOnProtected)
 
         return when (localVarResponse.responseType) {
@@ -1073,8 +1073,8 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * Delete a backup namespace including all snapshots.
      * @param store Datastore name.
      * @param ns Namespace.
-     * @param deleteGroups If set, all groups will be destroyed in the whole hierarchy below andincluding &#x60;ns&#x60;. If not set, only empty namespaces will be pruned. (optional, default to 0)
-     * @param errorOnProtected Return error when namespace cannot be deleted because of protected snapshots (optional, default to 1)
+     * @param deleteGroups If set, all groups will be destroyed in the whole hierarchy below andincluding &#x60;ns&#x60;. If not set, only empty namespaces will be pruned. (optional, default to false)
+     * @param errorOnProtected Return error when namespace cannot be deleted because of protected snapshots (optional, default to true)
      * @return ApiResponse<AdminDatastoreDeleteNamespaceResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1094,8 +1094,8 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      *
      * @param store Datastore name.
      * @param ns Namespace.
-     * @param deleteGroups If set, all groups will be destroyed in the whole hierarchy below andincluding &#x60;ns&#x60;. If not set, only empty namespaces will be pruned. (optional, default to 0)
-     * @param errorOnProtected Return error when namespace cannot be deleted because of protected snapshots (optional, default to 1)
+     * @param deleteGroups If set, all groups will be destroyed in the whole hierarchy below andincluding &#x60;ns&#x60;. If not set, only empty namespaces will be pruned. (optional, default to false)
+     * @param errorOnProtected Return error when namespace cannot be deleted because of protected snapshots (optional, default to true)
      * @return RequestConfig
      */
     fun adminDatastoreDeleteNamespaceRequestConfig(store: kotlin.String, ns: kotlin.String, deleteGroups: kotlin.Boolean?, errorOnProtected: kotlin.Boolean?) : RequestConfig<Unit> {
@@ -2628,7 +2628,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * Get datastore status
      * Get datastore status.  Permissions: Requires on /datastore/{store} either DATASTORE_AUDIT or DATASTORE_BACKUP for the full statistics. Counts of accessible groups are always returned, if any
      * @param store Datastore name.
-     * @param verbose Include additional information like snapshot counts and GC status. (optional, default to 0)
+     * @param verbose Include additional information like snapshot counts and GC status. (optional, default to false)
      * @return AdminDatastoreGetStatusResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2638,7 +2638,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun adminDatastoreGetStatus(store: kotlin.String, verbose: kotlin.Boolean? = 0) : AdminDatastoreGetStatusResponse {
+    fun adminDatastoreGetStatus(store: kotlin.String, verbose: kotlin.Boolean? = false) : AdminDatastoreGetStatusResponse {
         val localVarResponse = adminDatastoreGetStatusWithHttpInfo(store = store, verbose = verbose)
 
         return when (localVarResponse.responseType) {
@@ -2661,7 +2661,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * Get datastore status
      * Get datastore status.  Permissions: Requires on /datastore/{store} either DATASTORE_AUDIT or DATASTORE_BACKUP for the full statistics. Counts of accessible groups are always returned, if any
      * @param store Datastore name.
-     * @param verbose Include additional information like snapshot counts and GC status. (optional, default to 0)
+     * @param verbose Include additional information like snapshot counts and GC status. (optional, default to false)
      * @return ApiResponse<AdminDatastoreGetStatusResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2680,7 +2680,7 @@ open class AdminDatastoreApi(basePath: kotlin.String = defaultBasePath, client: 
      * To obtain the request config of the operation adminDatastoreGetStatus
      *
      * @param store Datastore name.
-     * @param verbose Include additional information like snapshot counts and GC status. (optional, default to 0)
+     * @param verbose Include additional information like snapshot counts and GC status. (optional, default to false)
      * @return RequestConfig
      */
     fun adminDatastoreGetStatusRequestConfig(store: kotlin.String, verbose: kotlin.Boolean?) : RequestConfig<Unit> {

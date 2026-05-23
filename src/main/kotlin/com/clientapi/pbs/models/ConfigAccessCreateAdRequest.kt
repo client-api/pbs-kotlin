@@ -81,7 +81,7 @@ data class ConfigAccessCreateAdRequest (
 
     /* True if you want this to be the default realm selected on login. */
     @Json(name = "default")
-    val default: kotlin.Boolean? = 0,
+    val default: kotlin.Boolean? = false,
 
     /* Custom LDAP search filter for user sync */
     @Json(name = "filter")
@@ -117,7 +117,7 @@ data class ConfigAccessCreateAdRequest (
 
     /* Verify server certificate */
     @Json(name = "verify")
-    val verify: kotlin.Boolean? = 0
+    val verify: kotlin.Boolean? = false
 
 ) {
 

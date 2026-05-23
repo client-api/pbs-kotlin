@@ -59,7 +59,7 @@ data class ConfigAcmeCreatePluginsRequest (
 
     /* Flag to disable the config. */
     @Json(name = "disable")
-    val disable: kotlin.Boolean? = 0,
+    val disable: kotlin.Boolean? = false,
 
     /* Extra delay in seconds to wait before requesting validation.  Allows to cope with long TTL of DNS records. */
     @Json(name = "validation-delay")

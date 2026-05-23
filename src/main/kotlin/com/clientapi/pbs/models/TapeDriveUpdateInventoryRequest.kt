@@ -39,11 +39,11 @@ data class TapeDriveUpdateInventoryRequest (
 
     /* Restore the catalog from tape. */
     @Json(name = "catalog")
-    val catalog: kotlin.Boolean? = 0,
+    val catalog: kotlin.Boolean? = false,
 
     /* Load all tapes and try read labels (even if already inventoried) */
     @Json(name = "read-all-labels")
-    val readAllLabels: kotlin.Boolean? = 0
+    val readAllLabels: kotlin.Boolean? = false
 
 ) {
 

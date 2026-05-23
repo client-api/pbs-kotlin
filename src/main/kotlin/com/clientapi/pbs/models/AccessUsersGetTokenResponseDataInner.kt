@@ -54,7 +54,7 @@ data class AccessUsersGetTokenResponseDataInner (
 
     /* Enable the account (default). You can set this to '0' to disable the account. */
     @Json(name = "enable")
-    val enable: kotlin.Boolean? = 1,
+    val enable: kotlin.Boolean? = true,
 
     /* Account expiration date (seconds since epoch). '0' means no expiration date. */
     @Json(name = "expire")

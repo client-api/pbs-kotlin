@@ -419,7 +419,7 @@ open class TapeMediaApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * List pool media
      * List pool media  Permissions: List of registered backup media filtered by Tape.Audit privileges on pool
      * @param pool Media pool name. (optional)
-     * @param updateStatus Try to update tape library status (check what tapes are online). (optional, default to 1)
+     * @param updateStatus Try to update tape library status (check what tapes are online). (optional, default to true)
      * @param updateStatusChanger Tape Changer Identifier. (optional)
      * @return TapeMediaGetListResponse
      * @throws IllegalStateException If the request is not correctly configured
@@ -430,7 +430,7 @@ open class TapeMediaApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun tapeMediaGetList(pool: kotlin.String? = null, updateStatus: kotlin.Boolean? = 1, updateStatusChanger: kotlin.String? = null) : TapeMediaGetListResponse {
+    fun tapeMediaGetList(pool: kotlin.String? = null, updateStatus: kotlin.Boolean? = true, updateStatusChanger: kotlin.String? = null) : TapeMediaGetListResponse {
         val localVarResponse = tapeMediaGetListWithHttpInfo(pool = pool, updateStatus = updateStatus, updateStatusChanger = updateStatusChanger)
 
         return when (localVarResponse.responseType) {
@@ -453,7 +453,7 @@ open class TapeMediaApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * List pool media
      * List pool media  Permissions: List of registered backup media filtered by Tape.Audit privileges on pool
      * @param pool Media pool name. (optional)
-     * @param updateStatus Try to update tape library status (check what tapes are online). (optional, default to 1)
+     * @param updateStatus Try to update tape library status (check what tapes are online). (optional, default to true)
      * @param updateStatusChanger Tape Changer Identifier. (optional)
      * @return ApiResponse<TapeMediaGetListResponse?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -473,7 +473,7 @@ open class TapeMediaApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation tapeMediaGetList
      *
      * @param pool Media pool name. (optional)
-     * @param updateStatus Try to update tape library status (check what tapes are online). (optional, default to 1)
+     * @param updateStatus Try to update tape library status (check what tapes are online). (optional, default to true)
      * @param updateStatusChanger Tape Changer Identifier. (optional)
      * @return RequestConfig
      */

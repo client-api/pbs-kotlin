@@ -613,7 +613,7 @@ open class AccessUsersApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * GET /access/users
      * List users
      * List users  Permissions: Returns all or just the logged-in user (/API token owner), depending on privileges.
-     * @param includeTokens Include user&#39;s API tokens in returned list. (optional, default to 0)
+     * @param includeTokens Include user&#39;s API tokens in returned list. (optional, default to false)
      * @return AccessUsersGetUsersResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -623,7 +623,7 @@ open class AccessUsersApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun accessUsersGetUsers(includeTokens: kotlin.Boolean? = 0) : AccessUsersGetUsersResponse {
+    fun accessUsersGetUsers(includeTokens: kotlin.Boolean? = false) : AccessUsersGetUsersResponse {
         val localVarResponse = accessUsersGetUsersWithHttpInfo(includeTokens = includeTokens)
 
         return when (localVarResponse.responseType) {
@@ -645,7 +645,7 @@ open class AccessUsersApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * GET /access/users
      * List users
      * List users  Permissions: Returns all or just the logged-in user (/API token owner), depending on privileges.
-     * @param includeTokens Include user&#39;s API tokens in returned list. (optional, default to 0)
+     * @param includeTokens Include user&#39;s API tokens in returned list. (optional, default to false)
      * @return ApiResponse<AccessUsersGetUsersResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -663,7 +663,7 @@ open class AccessUsersApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * To obtain the request config of the operation accessUsersGetUsers
      *
-     * @param includeTokens Include user&#39;s API tokens in returned list. (optional, default to 0)
+     * @param includeTokens Include user&#39;s API tokens in returned list. (optional, default to false)
      * @return RequestConfig
      */
     fun accessUsersGetUsersRequestConfig(includeTokens: kotlin.Boolean?) : RequestConfig<Unit> {

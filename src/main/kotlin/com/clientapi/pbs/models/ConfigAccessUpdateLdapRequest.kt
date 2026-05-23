@@ -76,7 +76,7 @@ data class ConfigAccessUpdateLdapRequest (
 
     /* True if you want this to be the default realm selected on login. */
     @Json(name = "default")
-    val default: kotlin.Boolean? = 0,
+    val default: kotlin.Boolean? = false,
 
     /* List of properties to delete. */
     @Json(name = "delete")
@@ -128,7 +128,7 @@ data class ConfigAccessUpdateLdapRequest (
 
     /* Verify server certificate */
     @Json(name = "verify")
-    val verify: kotlin.Boolean? = 0
+    val verify: kotlin.Boolean? = false
 
 ) {
 

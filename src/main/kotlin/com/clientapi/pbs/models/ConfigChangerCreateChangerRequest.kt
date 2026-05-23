@@ -50,7 +50,7 @@ data class ConfigChangerCreateChangerRequest (
 
     /* if set to true, tapes are ejected manually before unloading */
     @Json(name = "eject-before-unload")
-    val ejectBeforeUnload: kotlin.Boolean? = 0,
+    val ejectBeforeUnload: kotlin.Boolean? = false,
 
     /* A list of slot numbers, comma separated. Those slots are reserved for Import/Export, i.e. any media in those slots are considered to be 'offline'.  */
     @Json(name = "export-slots")

@@ -79,7 +79,7 @@ data class ConfigRemoteUpdateRemoteRequest (
 
     /* Use the http proxy configuration of the node for remote connections. */
     @Json(name = "use-node-proxy")
-    val useNodeProxy: kotlin.Boolean? = 0
+    val useNodeProxy: kotlin.Boolean? = false
 
 ) {
 

@@ -48,7 +48,7 @@ data class AccessAclGetAclResponseDataInner (
 
     /* Allow to propagate (inherit) permissions. */
     @Json(name = "propagate")
-    val propagate: kotlin.Boolean = 1,
+    val propagate: kotlin.Boolean = true,
 
     /* Enum representing roles via their [PRIVILEGES] combination.  Since privileges are implemented as bitflags, each unique combination of privileges maps to a single, unique `u64` value that is used in this enum definition. */
     @Json(name = "roleid")

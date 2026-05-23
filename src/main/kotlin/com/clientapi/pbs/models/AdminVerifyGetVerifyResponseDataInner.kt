@@ -63,7 +63,7 @@ data class AdminVerifyGetVerifyResponseDataInner (
 
     /* Do not verify backups that are already verified if their verification is not outdated. */
     @Json(name = "ignore-verified")
-    val ignoreVerified: kotlin.Boolean? = 1,
+    val ignoreVerified: kotlin.Boolean? = true,
 
     /* Endtime of the last run. */
     @Json(name = "last-run-endtime")

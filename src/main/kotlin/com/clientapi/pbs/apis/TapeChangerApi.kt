@@ -210,7 +210,7 @@ open class TapeChangerApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * Get tape changer status
      * Get tape changer status
      * @param name Tape Changer Identifier.
-     * @param cache Use cached value. (optional, default to 1)
+     * @param cache Use cached value. (optional, default to true)
      * @return TapeChangerGetStatusResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -220,7 +220,7 @@ open class TapeChangerApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun tapeChangerGetStatus(name: kotlin.String, cache: kotlin.Boolean? = 1) : TapeChangerGetStatusResponse {
+    fun tapeChangerGetStatus(name: kotlin.String, cache: kotlin.Boolean? = true) : TapeChangerGetStatusResponse {
         val localVarResponse = tapeChangerGetStatusWithHttpInfo(name = name, cache = cache)
 
         return when (localVarResponse.responseType) {
@@ -243,7 +243,7 @@ open class TapeChangerApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * Get tape changer status
      * Get tape changer status
      * @param name Tape Changer Identifier.
-     * @param cache Use cached value. (optional, default to 1)
+     * @param cache Use cached value. (optional, default to true)
      * @return ApiResponse<TapeChangerGetStatusResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -262,7 +262,7 @@ open class TapeChangerApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * To obtain the request config of the operation tapeChangerGetStatus
      *
      * @param name Tape Changer Identifier.
-     * @param cache Use cached value. (optional, default to 1)
+     * @param cache Use cached value. (optional, default to true)
      * @return RequestConfig
      */
     fun tapeChangerGetStatusRequestConfig(name: kotlin.String, cache: kotlin.Boolean?) : RequestConfig<Unit> {

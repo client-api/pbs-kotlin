@@ -41,7 +41,7 @@ data class AccessDomainsCreateSyncRequest (
 
     /* If set, do not create/delete anything */
     @Json(name = "dry-run")
-    val dryRun: kotlin.Boolean? = 0,
+    val dryRun: kotlin.Boolean? = false,
 
     /* Enable newly synced users immediately */
     @Json(name = "enable-new")

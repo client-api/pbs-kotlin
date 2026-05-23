@@ -51,7 +51,7 @@ data class NodesDisksCreateDirectoryRequest (
 
     /* Configure a datastore using the directory. */
     @Json(name = "add-datastore")
-    val addDatastore: kotlin.Boolean? = 0,
+    val addDatastore: kotlin.Boolean? = false,
 
     /* A file system type supported by our tooling. */
     @Json(name = "filesystem")
@@ -59,7 +59,7 @@ data class NodesDisksCreateDirectoryRequest (
 
     /* The added datastore is removable. */
     @Json(name = "removable-datastore")
-    val removableDatastore: kotlin.Boolean? = 0
+    val removableDatastore: kotlin.Boolean? = false
 
 ) {
 

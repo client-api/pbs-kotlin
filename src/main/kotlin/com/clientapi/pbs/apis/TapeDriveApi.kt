@@ -922,7 +922,7 @@ open class TapeDriveApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * List drives
      * List drives  Permissions: List configured tape drives filtered by Tape.Audit privileges
      * @param changer Tape Changer Identifier. (optional)
-     * @param queryActivity If true, queries and returns the drive activity for each drive. (optional, default to 0)
+     * @param queryActivity If true, queries and returns the drive activity for each drive. (optional, default to false)
      * @return TapeDriveGetDriveResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -932,7 +932,7 @@ open class TapeDriveApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun tapeDriveGetDrive(changer: kotlin.String? = null, queryActivity: kotlin.Boolean? = 0) : TapeDriveGetDriveResponse {
+    fun tapeDriveGetDrive(changer: kotlin.String? = null, queryActivity: kotlin.Boolean? = false) : TapeDriveGetDriveResponse {
         val localVarResponse = tapeDriveGetDriveWithHttpInfo(changer = changer, queryActivity = queryActivity)
 
         return when (localVarResponse.responseType) {
@@ -955,7 +955,7 @@ open class TapeDriveApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * List drives
      * List drives  Permissions: List configured tape drives filtered by Tape.Audit privileges
      * @param changer Tape Changer Identifier. (optional)
-     * @param queryActivity If true, queries and returns the drive activity for each drive. (optional, default to 0)
+     * @param queryActivity If true, queries and returns the drive activity for each drive. (optional, default to false)
      * @return ApiResponse<TapeDriveGetDriveResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -974,7 +974,7 @@ open class TapeDriveApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation tapeDriveGetDrive
      *
      * @param changer Tape Changer Identifier. (optional)
-     * @param queryActivity If true, queries and returns the drive activity for each drive. (optional, default to 0)
+     * @param queryActivity If true, queries and returns the drive activity for each drive. (optional, default to false)
      * @return RequestConfig
      */
     fun tapeDriveGetDriveRequestConfig(changer: kotlin.String?, queryActivity: kotlin.Boolean?) : RequestConfig<Unit> {

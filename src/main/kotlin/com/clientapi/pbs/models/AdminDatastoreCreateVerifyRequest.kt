@@ -59,7 +59,7 @@ data class AdminDatastoreCreateVerifyRequest (
 
     /* Do not verify backups that are already verified if their verification is not outdated. */
     @Json(name = "ignore-verified")
-    val ignoreVerified: kotlin.Boolean? = 1,
+    val ignoreVerified: kotlin.Boolean? = true,
 
     /* How many levels of namespaces should be operated on (0 == no recursion) */
     @Json(name = "max-depth")

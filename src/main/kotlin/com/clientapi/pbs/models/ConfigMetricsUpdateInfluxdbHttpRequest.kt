@@ -64,7 +64,7 @@ data class ConfigMetricsUpdateInfluxdbHttpRequest (
 
     /* Enables or disables the metrics server */
     @Json(name = "enable")
-    val enable: kotlin.Boolean? = 1,
+    val enable: kotlin.Boolean? = true,
 
     /* The (optional) maximum body size */
     @Json(name = "max-body-size")
@@ -84,7 +84,7 @@ data class ConfigMetricsUpdateInfluxdbHttpRequest (
 
     /* If true, the certificate will be validated. */
     @Json(name = "verify-tls")
-    val verifyTls: kotlin.Boolean? = 1
+    val verifyTls: kotlin.Boolean? = true
 
 ) {
 

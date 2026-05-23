@@ -71,7 +71,7 @@ data class TapeBackupCreateBackupRequest (
 
     /* Ignore the allocation policy and start a new media-set. */
     @Json(name = "force-media-set")
-    val forceMediaSet: kotlin.Boolean? = 0,
+    val forceMediaSet: kotlin.Boolean? = false,
 
     /* List of group filters. */
     @Json(name = "group-filter")

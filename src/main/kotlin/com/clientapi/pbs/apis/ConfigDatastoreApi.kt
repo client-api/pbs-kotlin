@@ -139,9 +139,9 @@ open class ConfigDatastoreApi(basePath: kotlin.String = defaultBasePath, client:
      * Remove a datastore configuration and optionally delete all its contents
      * Remove a datastore configuration and optionally delete all its contents.  Permissions: Requires Datastore.Allocate and, for a backing-device, Sys.Modify on &#39;/system/disks&#39;.
      * @param name Datastore name.
-     * @param destroyData Delete the datastore&#39;s underlying contents (optional, default to 0)
+     * @param destroyData Delete the datastore&#39;s underlying contents (optional, default to false)
      * @param digest Prevent changes if current configuration file has different SHA256 digest. This can be used to prevent concurrent modifications. (optional)
-     * @param keepJobConfigs If enabled, the job configurations related to this datastore will be kept. (optional, default to 0)
+     * @param keepJobConfigs If enabled, the job configurations related to this datastore will be kept. (optional, default to false)
      * @return ConfigDatastoreDeleteDatastoreResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -151,7 +151,7 @@ open class ConfigDatastoreApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun configDatastoreDeleteDatastore(name: kotlin.String, destroyData: kotlin.Boolean? = 0, digest: kotlin.String? = null, keepJobConfigs: kotlin.Boolean? = 0) : ConfigDatastoreDeleteDatastoreResponse {
+    fun configDatastoreDeleteDatastore(name: kotlin.String, destroyData: kotlin.Boolean? = false, digest: kotlin.String? = null, keepJobConfigs: kotlin.Boolean? = false) : ConfigDatastoreDeleteDatastoreResponse {
         val localVarResponse = configDatastoreDeleteDatastoreWithHttpInfo(name = name, destroyData = destroyData, digest = digest, keepJobConfigs = keepJobConfigs)
 
         return when (localVarResponse.responseType) {
@@ -174,9 +174,9 @@ open class ConfigDatastoreApi(basePath: kotlin.String = defaultBasePath, client:
      * Remove a datastore configuration and optionally delete all its contents
      * Remove a datastore configuration and optionally delete all its contents.  Permissions: Requires Datastore.Allocate and, for a backing-device, Sys.Modify on &#39;/system/disks&#39;.
      * @param name Datastore name.
-     * @param destroyData Delete the datastore&#39;s underlying contents (optional, default to 0)
+     * @param destroyData Delete the datastore&#39;s underlying contents (optional, default to false)
      * @param digest Prevent changes if current configuration file has different SHA256 digest. This can be used to prevent concurrent modifications. (optional)
-     * @param keepJobConfigs If enabled, the job configurations related to this datastore will be kept. (optional, default to 0)
+     * @param keepJobConfigs If enabled, the job configurations related to this datastore will be kept. (optional, default to false)
      * @return ApiResponse<ConfigDatastoreDeleteDatastoreResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -195,9 +195,9 @@ open class ConfigDatastoreApi(basePath: kotlin.String = defaultBasePath, client:
      * To obtain the request config of the operation configDatastoreDeleteDatastore
      *
      * @param name Datastore name.
-     * @param destroyData Delete the datastore&#39;s underlying contents (optional, default to 0)
+     * @param destroyData Delete the datastore&#39;s underlying contents (optional, default to false)
      * @param digest Prevent changes if current configuration file has different SHA256 digest. This can be used to prevent concurrent modifications. (optional)
-     * @param keepJobConfigs If enabled, the job configurations related to this datastore will be kept. (optional, default to 0)
+     * @param keepJobConfigs If enabled, the job configurations related to this datastore will be kept. (optional, default to false)
      * @return RequestConfig
      */
     fun configDatastoreDeleteDatastoreRequestConfig(name: kotlin.String, destroyData: kotlin.Boolean?, digest: kotlin.String?, keepJobConfigs: kotlin.Boolean?) : RequestConfig<Unit> {

@@ -51,7 +51,7 @@ data class AdminDatastoreCreateMoveGroupRequest (
 
     /* If the group already exists in the target namespace, merge snapshots into it. Requires matching ownership and non-overlapping snapshot times. */
     @Json(name = "merge-group")
-    val mergeGroup: kotlin.Boolean? = 1,
+    val mergeGroup: kotlin.Boolean? = true,
 
     /* Namespace. */
     @Json(name = "ns")

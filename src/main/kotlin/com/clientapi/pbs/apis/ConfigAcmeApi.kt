@@ -224,7 +224,7 @@ open class ConfigAcmeApi(basePath: kotlin.String = defaultBasePath, client: Call
      * Deactivate an ACME account
      * Deactivate an ACME account.
      * @param name ACME account name.
-     * @param force Delete account data even if the server refuses to deactivate the account. (optional, default to 0)
+     * @param force Delete account data even if the server refuses to deactivate the account. (optional, default to false)
      * @return ConfigAcmeDeleteAccountResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -234,7 +234,7 @@ open class ConfigAcmeApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun configAcmeDeleteAccount(name: kotlin.String, force: kotlin.Boolean? = 0) : ConfigAcmeDeleteAccountResponse {
+    fun configAcmeDeleteAccount(name: kotlin.String, force: kotlin.Boolean? = false) : ConfigAcmeDeleteAccountResponse {
         val localVarResponse = configAcmeDeleteAccountWithHttpInfo(name = name, force = force)
 
         return when (localVarResponse.responseType) {
@@ -257,7 +257,7 @@ open class ConfigAcmeApi(basePath: kotlin.String = defaultBasePath, client: Call
      * Deactivate an ACME account
      * Deactivate an ACME account.
      * @param name ACME account name.
-     * @param force Delete account data even if the server refuses to deactivate the account. (optional, default to 0)
+     * @param force Delete account data even if the server refuses to deactivate the account. (optional, default to false)
      * @return ApiResponse<ConfigAcmeDeleteAccountResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -276,7 +276,7 @@ open class ConfigAcmeApi(basePath: kotlin.String = defaultBasePath, client: Call
      * To obtain the request config of the operation configAcmeDeleteAccount
      *
      * @param name ACME account name.
-     * @param force Delete account data even if the server refuses to deactivate the account. (optional, default to 0)
+     * @param force Delete account data even if the server refuses to deactivate the account. (optional, default to false)
      * @return RequestConfig
      */
     fun configAcmeDeleteAccountRequestConfig(name: kotlin.String, force: kotlin.Boolean?) : RequestConfig<Unit> {

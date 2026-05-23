@@ -60,7 +60,7 @@ open class AccessAclApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * GET /access/acl
      * Read Access Control List (ACLs)
      * Read Access Control List (ACLs).  Permissions: Returns all ACLs if user has Sys.Audit on &#39;/access/acl&#39;, or just the ACLs containing the user&#39;s API tokens.
-     * @param exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param path Access control path. (optional)
      * @return AccessAclGetAclResponse
      * @throws IllegalStateException If the request is not correctly configured
@@ -71,7 +71,7 @@ open class AccessAclApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun accessAclGetAcl(exact: kotlin.Boolean? = 0, path: kotlin.String? = null) : AccessAclGetAclResponse {
+    fun accessAclGetAcl(exact: kotlin.Boolean? = false, path: kotlin.String? = null) : AccessAclGetAclResponse {
         val localVarResponse = accessAclGetAclWithHttpInfo(exact = exact, path = path)
 
         return when (localVarResponse.responseType) {
@@ -93,7 +93,7 @@ open class AccessAclApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * GET /access/acl
      * Read Access Control List (ACLs)
      * Read Access Control List (ACLs).  Permissions: Returns all ACLs if user has Sys.Audit on &#39;/access/acl&#39;, or just the ACLs containing the user&#39;s API tokens.
-     * @param exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param path Access control path. (optional)
      * @return ApiResponse<AccessAclGetAclResponse?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -112,7 +112,7 @@ open class AccessAclApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation accessAclGetAcl
      *
-     * @param exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param path Access control path. (optional)
      * @return RequestConfig
      */

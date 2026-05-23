@@ -69,7 +69,7 @@ data class AccessAclUpdateAclRequest (
 
     /* Allow to propagate (inherit) permissions. */
     @Json(name = "propagate")
-    val propagate: kotlin.Boolean? = 1
+    val propagate: kotlin.Boolean? = true
 
 ) {
 

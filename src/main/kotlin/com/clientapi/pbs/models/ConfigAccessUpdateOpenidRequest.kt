@@ -55,7 +55,7 @@ data class ConfigAccessUpdateOpenidRequest (
 
     /* Automatically create users if they do not exist. */
     @Json(name = "autocreate")
-    val autocreate: kotlin.Boolean? = 0,
+    val autocreate: kotlin.Boolean? = false,
 
     /* OpenID Client ID */
     @Json(name = "client-id")
@@ -71,7 +71,7 @@ data class ConfigAccessUpdateOpenidRequest (
 
     /* True if you want this to be the default realm selected on login. */
     @Json(name = "default")
-    val default: kotlin.Boolean? = 0,
+    val default: kotlin.Boolean? = false,
 
     /* List of properties to delete. */
     @Json(name = "delete")

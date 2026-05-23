@@ -45,7 +45,7 @@ data class NodesCertificatesCreateCustomRequest (
 
     /* Force replacement of existing files. */
     @Json(name = "force")
-    val force: kotlin.Boolean? = 0,
+    val force: kotlin.Boolean? = false,
 
     /* PEM encoded private key. */
     @Json(name = "key")
@@ -53,7 +53,7 @@ data class NodesCertificatesCreateCustomRequest (
 
     /* UI compatibility parameter, ignored */
     @Json(name = "restart")
-    val restart: kotlin.Boolean? = 0
+    val restart: kotlin.Boolean? = false
 
 ) {
 

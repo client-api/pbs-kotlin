@@ -221,7 +221,7 @@ open class NodesCertificatesApi(basePath: kotlin.String = defaultBasePath, clien
      * Delete the current certificate and regenerate a self signed one
      * Delete the current certificate and regenerate a self signed one.
      * @param node Node name (or &#39;localhost&#39;)
-     * @param restart UI compatibility parameter, ignored (optional, default to 0)
+     * @param restart UI compatibility parameter, ignored (optional, default to false)
      * @return NodesCertificatesDeleteCustomResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -231,7 +231,7 @@ open class NodesCertificatesApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun nodesCertificatesDeleteCustom(node: kotlin.String, restart: kotlin.Boolean? = 0) : NodesCertificatesDeleteCustomResponse {
+    fun nodesCertificatesDeleteCustom(node: kotlin.String, restart: kotlin.Boolean? = false) : NodesCertificatesDeleteCustomResponse {
         val localVarResponse = nodesCertificatesDeleteCustomWithHttpInfo(node = node, restart = restart)
 
         return when (localVarResponse.responseType) {
@@ -254,7 +254,7 @@ open class NodesCertificatesApi(basePath: kotlin.String = defaultBasePath, clien
      * Delete the current certificate and regenerate a self signed one
      * Delete the current certificate and regenerate a self signed one.
      * @param node Node name (or &#39;localhost&#39;)
-     * @param restart UI compatibility parameter, ignored (optional, default to 0)
+     * @param restart UI compatibility parameter, ignored (optional, default to false)
      * @return ApiResponse<NodesCertificatesDeleteCustomResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -273,7 +273,7 @@ open class NodesCertificatesApi(basePath: kotlin.String = defaultBasePath, clien
      * To obtain the request config of the operation nodesCertificatesDeleteCustom
      *
      * @param node Node name (or &#39;localhost&#39;)
-     * @param restart UI compatibility parameter, ignored (optional, default to 0)
+     * @param restart UI compatibility parameter, ignored (optional, default to false)
      * @return RequestConfig
      */
     fun nodesCertificatesDeleteCustomRequestConfig(node: kotlin.String, restart: kotlin.Boolean?) : RequestConfig<Unit> {

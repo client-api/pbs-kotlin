@@ -54,7 +54,7 @@ data class ConfigMetricsGetInfluxdbUdpResponseDataInner (
 
     /* Enables or disables the metrics server */
     @Json(name = "enable")
-    val enable: kotlin.Boolean? = 1,
+    val enable: kotlin.Boolean? = true,
 
     /* The MTU */
     @Json(name = "mtu")

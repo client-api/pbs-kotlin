@@ -130,7 +130,7 @@ open class StatusApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * GET /status/metrics
      * Return backup server metrics
      * Return backup server metrics.  Permissions: Users need Sys.Audit on /system/status for host metrics and Datastore.Audit on /datastore/{store} for datastore metrics
-     * @param history Include historic values (last 30 minutes) (optional, default to 0)
+     * @param history Include historic values (last 30 minutes) (optional, default to false)
      * @param startTime Only return values with a timestamp &gt; start-time. Only has an effect if &#39;history&#39; is also set (optional, default to 0L)
      * @return StatusGetMetricsResponse
      * @throws IllegalStateException If the request is not correctly configured
@@ -141,7 +141,7 @@ open class StatusApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun statusGetMetrics(history: kotlin.Boolean? = 0, startTime: kotlin.Long? = 0L) : StatusGetMetricsResponse {
+    fun statusGetMetrics(history: kotlin.Boolean? = false, startTime: kotlin.Long? = 0L) : StatusGetMetricsResponse {
         val localVarResponse = statusGetMetricsWithHttpInfo(history = history, startTime = startTime)
 
         return when (localVarResponse.responseType) {
@@ -163,7 +163,7 @@ open class StatusApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * GET /status/metrics
      * Return backup server metrics
      * Return backup server metrics.  Permissions: Users need Sys.Audit on /system/status for host metrics and Datastore.Audit on /datastore/{store} for datastore metrics
-     * @param history Include historic values (last 30 minutes) (optional, default to 0)
+     * @param history Include historic values (last 30 minutes) (optional, default to false)
      * @param startTime Only return values with a timestamp &gt; start-time. Only has an effect if &#39;history&#39; is also set (optional, default to 0L)
      * @return ApiResponse<StatusGetMetricsResponse?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -182,7 +182,7 @@ open class StatusApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * To obtain the request config of the operation statusGetMetrics
      *
-     * @param history Include historic values (last 30 minutes) (optional, default to 0)
+     * @param history Include historic values (last 30 minutes) (optional, default to false)
      * @param startTime Only return values with a timestamp &gt; start-time. Only has an effect if &#39;history&#39; is also set (optional, default to 0L)
      * @return RequestConfig
      */

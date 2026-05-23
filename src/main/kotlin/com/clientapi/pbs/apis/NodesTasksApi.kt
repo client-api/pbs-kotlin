@@ -141,7 +141,7 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * Read the task log  Permissions: Users can access their own tasks, or need Sys.Audit on /system/tasks.
      * @param node Node name (or &#39;localhost&#39;)
      * @param upid Unique Process/Task Identifier
-     * @param download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50L)
      * @param start Start at this line when reading the tasklog (optional, default to 0L)
      * @param testStatus Test task status, and set result attribute \&quot;active\&quot; accordingly. (optional)
@@ -154,7 +154,7 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun nodesTasksGetLog(node: kotlin.String, upid: kotlin.String, download: kotlin.Boolean? = 0, limit: kotlin.Long? = 50L, start: kotlin.Long? = 0L, testStatus: kotlin.Boolean? = null) : NodesTasksGetLogResponse {
+    fun nodesTasksGetLog(node: kotlin.String, upid: kotlin.String, download: kotlin.Boolean? = false, limit: kotlin.Long? = 50L, start: kotlin.Long? = 0L, testStatus: kotlin.Boolean? = null) : NodesTasksGetLogResponse {
         val localVarResponse = nodesTasksGetLogWithHttpInfo(node = node, upid = upid, download = download, limit = limit, start = start, testStatus = testStatus)
 
         return when (localVarResponse.responseType) {
@@ -178,7 +178,7 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * Read the task log  Permissions: Users can access their own tasks, or need Sys.Audit on /system/tasks.
      * @param node Node name (or &#39;localhost&#39;)
      * @param upid Unique Process/Task Identifier
-     * @param download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50L)
      * @param start Start at this line when reading the tasklog (optional, default to 0L)
      * @param testStatus Test task status, and set result attribute \&quot;active\&quot; accordingly. (optional)
@@ -201,7 +201,7 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      *
      * @param node Node name (or &#39;localhost&#39;)
      * @param upid Unique Process/Task Identifier
-     * @param download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50L)
      * @param start Start at this line when reading the tasklog (optional, default to 0L)
      * @param testStatus Test task status, and set result attribute \&quot;active\&quot; accordingly. (optional)
@@ -394,9 +394,9 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * List tasks
      * List tasks.  Permissions: Users can only see their own tasks, unless they have Sys.Audit on /system/tasks.
      * @param node Node name (or &#39;localhost&#39;)
-     * @param errors Only list erroneous tasks. (optional, default to 0)
+     * @param errors Only list erroneous tasks. (optional, default to false)
      * @param limit Only list this amount of tasks. (0 means no limit) (optional, default to 50L)
-     * @param running Only list running tasks. (optional, default to 0)
+     * @param running Only list running tasks. (optional, default to false)
      * @param since Only list tasks since this UNIX epoch. (optional)
      * @param start List tasks beginning from this offset. (optional, default to 0L)
      * @param statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -413,7 +413,7 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun nodesTasksGetTasks(node: kotlin.String, errors: kotlin.Boolean? = 0, limit: kotlin.Long? = 50L, running: kotlin.Boolean? = 0, since: kotlin.Long? = null, start: kotlin.Long? = 0L, statusfilter: kotlin.collections.List<PbsNodesTasksInlineEnum>? = null, store: kotlin.String? = null, typefilter: kotlin.String? = null, until: kotlin.Long? = null, userfilter: kotlin.String? = null) : NodesTasksGetTasksResponse {
+    fun nodesTasksGetTasks(node: kotlin.String, errors: kotlin.Boolean? = false, limit: kotlin.Long? = 50L, running: kotlin.Boolean? = false, since: kotlin.Long? = null, start: kotlin.Long? = 0L, statusfilter: kotlin.collections.List<PbsNodesTasksInlineEnum>? = null, store: kotlin.String? = null, typefilter: kotlin.String? = null, until: kotlin.Long? = null, userfilter: kotlin.String? = null) : NodesTasksGetTasksResponse {
         val localVarResponse = nodesTasksGetTasksWithHttpInfo(node = node, errors = errors, limit = limit, running = running, since = since, start = start, statusfilter = statusfilter, store = store, typefilter = typefilter, until = until, userfilter = userfilter)
 
         return when (localVarResponse.responseType) {
@@ -436,9 +436,9 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * List tasks
      * List tasks.  Permissions: Users can only see their own tasks, unless they have Sys.Audit on /system/tasks.
      * @param node Node name (or &#39;localhost&#39;)
-     * @param errors Only list erroneous tasks. (optional, default to 0)
+     * @param errors Only list erroneous tasks. (optional, default to false)
      * @param limit Only list this amount of tasks. (0 means no limit) (optional, default to 50L)
-     * @param running Only list running tasks. (optional, default to 0)
+     * @param running Only list running tasks. (optional, default to false)
      * @param since Only list tasks since this UNIX epoch. (optional)
      * @param start List tasks beginning from this offset. (optional, default to 0L)
      * @param statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -464,9 +464,9 @@ open class NodesTasksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * To obtain the request config of the operation nodesTasksGetTasks
      *
      * @param node Node name (or &#39;localhost&#39;)
-     * @param errors Only list erroneous tasks. (optional, default to 0)
+     * @param errors Only list erroneous tasks. (optional, default to false)
      * @param limit Only list this amount of tasks. (0 means no limit) (optional, default to 50L)
-     * @param running Only list running tasks. (optional, default to 0)
+     * @param running Only list running tasks. (optional, default to false)
      * @param since Only list tasks since this UNIX epoch. (optional)
      * @param start List tasks beginning from this offset. (optional, default to 0L)
      * @param statusfilter Only list tasks which have any one of the listed status. (optional)

@@ -48,7 +48,7 @@ data class AccessTicketCreateTicketRequest (
 
     /* Whether the HttpOnly authentication flow should be used. */
     @Json(name = "http-only")
-    val httpOnly: kotlin.Boolean? = 0,
+    val httpOnly: kotlin.Boolean? = false,
 
     /* The secret password. This can also be a valid ticket. Only optional if the ticket is provided in a cookie header and only if the endpoint supports this. */
     @Json(name = "password")

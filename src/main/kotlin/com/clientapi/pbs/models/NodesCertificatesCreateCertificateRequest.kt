@@ -38,7 +38,7 @@ data class NodesCertificatesCreateCertificateRequest (
 
     /* Force replacement of existing files. */
     @Json(name = "force")
-    val force: kotlin.Boolean? = 0
+    val force: kotlin.Boolean? = false
 
 ) {
 

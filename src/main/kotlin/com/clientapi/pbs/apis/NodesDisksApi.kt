@@ -527,8 +527,8 @@ open class NodesDisksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * List local disks
      * List local disks
      * @param node Node name (or &#39;localhost&#39;)
-     * @param includePartitions Include partitions. (optional, default to 0)
-     * @param skipsmart Skip smart checks. (optional, default to 0)
+     * @param includePartitions Include partitions. (optional, default to false)
+     * @param skipsmart Skip smart checks. (optional, default to false)
      * @param usageType What a block device (disk) is used for. (optional)
      * @return NodesDisksGetListResponse
      * @throws IllegalStateException If the request is not correctly configured
@@ -539,7 +539,7 @@ open class NodesDisksApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun nodesDisksGetList(node: kotlin.String, includePartitions: kotlin.Boolean? = 0, skipsmart: kotlin.Boolean? = 0, usageType: PbsUsageTypeEnum? = null) : NodesDisksGetListResponse {
+    fun nodesDisksGetList(node: kotlin.String, includePartitions: kotlin.Boolean? = false, skipsmart: kotlin.Boolean? = false, usageType: PbsUsageTypeEnum? = null) : NodesDisksGetListResponse {
         val localVarResponse = nodesDisksGetListWithHttpInfo(node = node, includePartitions = includePartitions, skipsmart = skipsmart, usageType = usageType)
 
         return when (localVarResponse.responseType) {
@@ -562,8 +562,8 @@ open class NodesDisksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * List local disks
      * List local disks
      * @param node Node name (or &#39;localhost&#39;)
-     * @param includePartitions Include partitions. (optional, default to 0)
-     * @param skipsmart Skip smart checks. (optional, default to 0)
+     * @param includePartitions Include partitions. (optional, default to false)
+     * @param skipsmart Skip smart checks. (optional, default to false)
      * @param usageType What a block device (disk) is used for. (optional)
      * @return ApiResponse<NodesDisksGetListResponse?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -583,8 +583,8 @@ open class NodesDisksApi(basePath: kotlin.String = defaultBasePath, client: Call
      * To obtain the request config of the operation nodesDisksGetList
      *
      * @param node Node name (or &#39;localhost&#39;)
-     * @param includePartitions Include partitions. (optional, default to 0)
-     * @param skipsmart Skip smart checks. (optional, default to 0)
+     * @param includePartitions Include partitions. (optional, default to false)
+     * @param skipsmart Skip smart checks. (optional, default to false)
      * @param usageType What a block device (disk) is used for. (optional)
      * @return RequestConfig
      */

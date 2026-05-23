@@ -39,7 +39,7 @@ data class TapeDriveCreateFormatMediaRequest (
 
     /* Use fast erase. */
     @Json(name = "fast")
-    val fast: kotlin.Boolean? = 1,
+    val fast: kotlin.Boolean? = true,
 
     /* Media Label/Barcode. */
     @Json(name = "label-text")

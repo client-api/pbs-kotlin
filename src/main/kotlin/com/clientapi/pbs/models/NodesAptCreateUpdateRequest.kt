@@ -39,11 +39,11 @@ data class NodesAptCreateUpdateRequest (
 
     /* Send notification mail about new package updates available to the email address configured for 'root@pam'). */
     @Json(name = "notify")
-    val notify: kotlin.Boolean? = 0,
+    val notify: kotlin.Boolean? = false,
 
     /* Only produces output suitable for logging, omitting progress indicators. */
     @Json(name = "quiet")
-    val quiet: kotlin.Boolean? = 0
+    val quiet: kotlin.Boolean? = false
 
 ) {
 

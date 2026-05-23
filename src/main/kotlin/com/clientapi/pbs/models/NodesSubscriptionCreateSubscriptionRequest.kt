@@ -38,7 +38,7 @@ data class NodesSubscriptionCreateSubscriptionRequest (
 
     /* Always connect to server, even if information in cache is up to date. */
     @Json(name = "force")
-    val force: kotlin.Boolean? = 0
+    val force: kotlin.Boolean? = false
 
 ) {
 

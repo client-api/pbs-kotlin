@@ -57,7 +57,7 @@ data class AdminDatastoreCreatePruneRequest (
 
     /* Just show what prune would do, but do not delete anything. */
     @Json(name = "dry-run")
-    val dryRun: kotlin.Boolean? = 0,
+    val dryRun: kotlin.Boolean? = false,
 
     /* Number of daily backups to keep. */
     @Json(name = "keep-daily")
@@ -89,7 +89,7 @@ data class AdminDatastoreCreatePruneRequest (
 
     /* Spins up an asynchronous task that does the work. */
     @Json(name = "use-task")
-    val useTask: kotlin.Boolean? = 0
+    val useTask: kotlin.Boolean? = false
 
 ) {
 

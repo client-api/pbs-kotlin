@@ -56,7 +56,7 @@ data class ConfigMetricsUpdateInfluxdbUdpRequest (
 
     /* Enables or disables the metrics server */
     @Json(name = "enable")
-    val enable: kotlin.Boolean? = 1,
+    val enable: kotlin.Boolean? = true,
 
     /* host:port combination (Host can be DNS name or IP address). */
     @Json(name = "host")

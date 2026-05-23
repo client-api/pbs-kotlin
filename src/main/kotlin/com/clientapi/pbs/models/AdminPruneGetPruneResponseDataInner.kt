@@ -70,7 +70,7 @@ data class AdminPruneGetPruneResponseDataInner (
 
     /* Disable this job. */
     @Json(name = "disable")
-    val disable: kotlin.Boolean? = 0,
+    val disable: kotlin.Boolean? = false,
 
     /* Number of daily backups to keep. */
     @Json(name = "keep-daily")

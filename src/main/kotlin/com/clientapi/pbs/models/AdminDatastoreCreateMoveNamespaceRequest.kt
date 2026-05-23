@@ -50,7 +50,7 @@ data class AdminDatastoreCreateMoveNamespaceRequest (
 
     /* Remove the source namespace after moving all contents. Defaults to true. */
     @Json(name = "delete-source")
-    val deleteSource: kotlin.Boolean? = 1,
+    val deleteSource: kotlin.Boolean? = true,
 
     /* How many levels of namespaces should be operated on (0 == no recursion) */
     @Json(name = "max-depth")
@@ -58,7 +58,7 @@ data class AdminDatastoreCreateMoveNamespaceRequest (
 
     /* If a group with the same name already exists in the target namespace, merge snapshots into it. Requires matching ownership and non-overlapping snapshot times. */
     @Json(name = "merge-groups")
-    val mergeGroups: kotlin.Boolean? = 1
+    val mergeGroups: kotlin.Boolean? = true
 
 ) {
 

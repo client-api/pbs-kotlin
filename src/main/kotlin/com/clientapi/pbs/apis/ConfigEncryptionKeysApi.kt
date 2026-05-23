@@ -295,7 +295,7 @@ open class ConfigEncryptionKeysApi(basePath: kotlin.String = defaultBasePath, cl
      * GET /config/encryption-keys
      * List configured encryption keys
      * List configured encryption keys.  Permissions: List configured encryption keys filtered by Sys.Audit privileges
-     * @param includeArchived List also keys which have been archived. (optional, default to 0)
+     * @param includeArchived List also keys which have been archived. (optional, default to false)
      * @return ConfigEncryptionKeysGetEncryptionKeysResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -305,7 +305,7 @@ open class ConfigEncryptionKeysApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun configEncryptionKeysGetEncryptionKeys(includeArchived: kotlin.Boolean? = 0) : ConfigEncryptionKeysGetEncryptionKeysResponse {
+    fun configEncryptionKeysGetEncryptionKeys(includeArchived: kotlin.Boolean? = false) : ConfigEncryptionKeysGetEncryptionKeysResponse {
         val localVarResponse = configEncryptionKeysGetEncryptionKeysWithHttpInfo(includeArchived = includeArchived)
 
         return when (localVarResponse.responseType) {
@@ -327,7 +327,7 @@ open class ConfigEncryptionKeysApi(basePath: kotlin.String = defaultBasePath, cl
      * GET /config/encryption-keys
      * List configured encryption keys
      * List configured encryption keys.  Permissions: List configured encryption keys filtered by Sys.Audit privileges
-     * @param includeArchived List also keys which have been archived. (optional, default to 0)
+     * @param includeArchived List also keys which have been archived. (optional, default to false)
      * @return ApiResponse<ConfigEncryptionKeysGetEncryptionKeysResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -345,7 +345,7 @@ open class ConfigEncryptionKeysApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * To obtain the request config of the operation configEncryptionKeysGetEncryptionKeys
      *
-     * @param includeArchived List also keys which have been archived. (optional, default to 0)
+     * @param includeArchived List also keys which have been archived. (optional, default to false)
      * @return RequestConfig
      */
     fun configEncryptionKeysGetEncryptionKeysRequestConfig(includeArchived: kotlin.Boolean?) : RequestConfig<Unit> {
