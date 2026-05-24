@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.clientapi:pbs:2026.5.23")
+    implementation("com.clientapi:pbs:2026.5.24")
 }
 ```
 
@@ -50,7 +50,7 @@ import com.clientapi.pbs.Pve
 import com.clientapi.pbs.infrastructure.ApiClient
 
 // Configure the shared OkHttp + auth headers (set once, reused everywhere).
-ApiClient.apiKey["Authorization"] = "PBSAPIToken=user@realm!tokenid=uuid-secret"
+ApiClient.apiKey["Authorization"] = "PBSAPIToken=user@realm!tokenid:uuid-secret"
 
 val pbs = Pve(basePath = "https://pbs1.example.com:8007/api2/json")
 
